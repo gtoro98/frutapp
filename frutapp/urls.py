@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from fruits.views import fruit_detail_view, fruit_list_view
+from fruits.models import Fruit
+
 urlpatterns = [
+    path('', fruit_detail_view),
+    path('fruits/', fruit_list_view),
     path('admin/', admin.site.urls),
 ]
